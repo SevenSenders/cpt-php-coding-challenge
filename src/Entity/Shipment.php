@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Decimal\Decimal;
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
@@ -42,9 +41,9 @@ class Shipment
     private string $shipmentStatus;
 
     /**
-     * @ORM\Column(name="weight", type="decimal", nullable=true)
+     * @ORM\Column(name="weight", type="float", nullable=true)
      */
-    private Decimal $weight;
+    private float $weight;
 
     /**
      * @var DateTime|null
@@ -139,17 +138,17 @@ class Shipment
     }
 
     /**
-     * @return Decimal
+     * @return float
      */
-    public function getWeight(): Decimal
+    public function getWeight(): float
     {
         return $this->weight;
     }
 
     /**
-     * @param Decimal $weight
+     * @param float $weight
      */
-    public function setWeight(Decimal $weight): void
+    public function setWeight(float $weight): void
     {
         $this->weight = $weight;
     }
